@@ -1,4 +1,4 @@
-package com.streamer.worker.main;
+package com.streamer.worker;
 
 import java.io.IOException;
 import java.net.InetAddress;

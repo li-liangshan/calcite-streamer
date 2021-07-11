@@ -13,7 +13,7 @@ public class JdbcConnectionPool {
 	private static Map<String, Connection> connections = new ConcurrentHashMap<String, Connection>();
 
 	public static Connection getConnection(String driver, String url, String user, String password) {
-		String key = new String(DigestUtils.md5Hex(StringUtils.join(driver, url, user, password).getBytes()));
+		String key = DigestUtils.md5Hex(StringUtils.join(driver, url, user, password).getBytes());
 		try {
 			Class.forName(driver);
 			if (connections.containsKey(key)) {

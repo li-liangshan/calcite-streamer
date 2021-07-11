@@ -1,4 +1,4 @@
-package com.streamer.web.main;
+package com.streamer.web;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,10 +57,10 @@ public class StreamerApplication extends WebMvcConfigurerAdapter implements Appl
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 		// 开放定制的请求
 		list.add("/web/login");
-		String patterns[] = new String[list.size()];
+		String[] patterns = new String[list.size()];
 		registry.addInterceptor(new SessionInterceptor()).excludePathPatterns(list.toArray(patterns));
 		super.addInterceptors(registry);
 	}
